@@ -80,6 +80,16 @@ html, body {
     z-index: 2;
     top: 0;
     left: 0;
+    transition: opacity 0s;
+}
+
+.molduracamera {
+    position: absolute;
+    height: 100vh;
+    aspect-ratio: 20/9;
+    overflow: hidden;
+    z-index: 1;
+    transition: 3.5s linear;
 }
 
 #estaticapesada {
@@ -92,6 +102,7 @@ html, body {
     z-index: 2;
     top: 0;
     left: 0;
+    transition: opacity 0s;
 }
 
 .butoesmenu {
@@ -230,17 +241,12 @@ html, body {
     top: calc(302 / 720 * 100%);
     left:48.75%;
 }
-
 .fundocamera {
     position: absolute;
-    height: 100vh;
-    aspect-ratio: 20/9;
-    z-index: 1;
-}
-
-.fundocamera img{
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .grupotexto{
@@ -248,7 +254,7 @@ html, body {
     left: 5%;
     top: 50%;
     transform: translateY(-50%);
-    width: 40%;
+    width: 50%;
     height: 35%;
     z-index: 3;
 }
