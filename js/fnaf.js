@@ -3,7 +3,14 @@ const loading = document.getElementById("loading");
 const grupoMenu = {
     menu: document.getElementById("menu"),
     menumusica: new Audio("sons/darkness music.wav"),
-    fundomenu: document.getElementById("fundomenu")
+    fundomenu: document.getElementById("fundomenu"),
+    referencias: document.getElementById("referencias"),
+    butoesmenu: document.getElementById("butoesmenu"),
+    voltarref: document.getElementById("voltarref"),
+    voltarcred: document.getElementById("voltarcred"),
+    creditos: document.getElementById("creditos"),
+    vermelhoref: document.getElementById("vermelhorref"),
+    vermelhocred: document.getElementById("vermelhocred")
 }
 
 grupoMenu.menumusica.loop=true
@@ -15,12 +22,53 @@ function iniciarMusicaMenu() {
     document.removeEventListener('click', iniciarMusicaMenu);
 }
 
-// Impede o navegador de deixar arrastar as imagens do jogo
 document.addEventListener("dragstart", function(evento) {
     if (evento.target.tagName === "IMG") {
         evento.preventDefault();
     }
 });
+
+document.getElementById("refferences").addEventListener("click", function(){
+    sonsMonitor.blip.play()
+    grupoMenu.butoesmenu.style.display='none'
+    grupoMenu.referencias.style.display='flex'
+})
+
+document.getElementById("credits").addEventListener("click", function(){
+    sonsMonitor.blip.play()
+    grupoMenu.butoesmenu.style.display='none'
+    grupoMenu.creditos.style.display='flex'
+})
+
+grupoMenu.voltarref.addEventListener("click", function(){
+    sonsMonitor.blip.play()
+    grupoMenu.butoesmenu.style.display='flex'
+    grupoMenu.referencias.style.display='none'
+    grupoMenu.creditos.style.display='none'
+})
+
+grupoMenu.voltarref.addEventListener("mouseenter", function(){
+    grupoMenu.voltarref.textContent = "> Voltar";
+})
+
+grupoMenu.voltarref.addEventListener("mouseleave", function(){
+    grupoMenu.voltarref.textContent = "Voltar";
+})
+
+grupoMenu.voltarcred.addEventListener("click", function(){
+    sonsMonitor.blip.play()
+    grupoMenu.butoesmenu.style.display='flex'
+    grupoMenu.referencias.style.display='none'
+    grupoMenu.creditos.style.display='none'
+})
+
+grupoMenu.voltarcred.addEventListener("mouseenter", function(){
+    grupoMenu.voltarcred.textContent = "> Voltar";
+})
+
+grupoMenu.voltarcred.addEventListener("mouseleave", function(){
+    grupoMenu.voltarcred.textContent = "Voltar";
+})
 
 document.getElementById("newGame").addEventListener("click", function(){
     clearInterval(intervaloPesada)
@@ -60,7 +108,9 @@ const grupoMonitor = {
     cam1: document.getElementById("a1"),
     titulo: document.getElementById("titulo"),
     texto: document.getElementById("texto"),
-    fundocamera: document.getElementById("showstage")
+    fundocamera: document.getElementById("showstage"),
+    titulocamera: document.getElementById("titulocamera"),
+    vermelho: document.getElementById("vermelho")
 }
 
 const grupoSala = {
@@ -124,10 +174,10 @@ const caminhoPesada = [
 ]
 
 const dadosCameras = [
-    {id: "a1", imagem:"imagens/cameras/showstage.png", titulo: "Autoria Web - Introducao", texto: "​A autoria web e uma subarea da computacao a qual consiste na criacao, desenvolvimento, estruturacao e publicacao de conteudos e aplicacoes para a World Wide Web (WWW), podendo acessar sites e apps apos evoluir. Ela envolve o uso de linguagens de marcacao, estilizacao e programacao para interatividade, alem de principios de design e outros para definir uma acessibilidade satisfatoria, garantindo que uma pagina funcione em diferentes navegadores, de forma eficiente, segura e pratica."},
-    {id: "a2", imagem:"imagens/cameras/dininghall.png", titulo: "HTML - Basico", texto: "O HTML (HyperText Markup Language) trata-se de uma linguagem de marcacao utilizada para preparar a estrutura do site, utilizando o que chamamos de tags (, , ) para determinar o que aparecera naquela pagina, mas de forma que nao esteja sempre 'esteticamente bonito'; e como se fosse o esqueleto ou a carcaca que precisamos que esteja na pagina."},
-    {id: "a3", imagem:"imagens/cameras/piratescove.png", titulo: "CSS - Basico", texto: "O CSS (Cascading Style Sheets) e a linguagem de folhas de estilo que descrevera a parte visual da pagina marcada pelo HTML, adicionando cores, fontes, espacamentos, layout e ate mesmo a forma como o site se adapta em dispositivos diferentes. Com ele, conseguimos adicionar roupas e acessorios para o que antes era apenas uma carcaca."},
-    {id: "a4", imagem:"imagens/cameras/easthall.png", titulo: "JavaScript - Basico", texto: "O JavaScript sera a linguagem de programacao de alto nivel que ira motorizar e trazer comportamento dinamico para nossas paginas web. Diante disso, ele podera manipular HTML e CSS em tempo real, responder a acoes do usuario e impor requisicoes e outros comandos sem precisar atualizar a pagina, garantindo o funcionamento quase que completo de um site ou app."}
+    {id: "a1", imagem:"imagens/cameras/showstage.png", titulocamera: "Show Stage",titulo: "Autoria Web - Introducao", texto: "​A autoria web e uma subarea da computacao a qual consiste na criacao, desenvolvimento, estruturacao e publicacao de conteudos e aplicacoes para a World Wide Web (WWW), podendo acessar sites e apps apos evoluir. Ela envolve o uso de linguagens de marcacao, estilizacao e programacao para interatividade, alem de principios de design e outros para definir uma acessibilidade satisfatoria, garantindo que uma pagina funcione em diferentes navegadores, de forma eficiente, segura e pratica."},
+    {id: "a2", imagem:"imagens/cameras/dininghall.png", titulocamera: "Dining Hall", titulo: "HTML - Basico", texto: "O HTML (HyperText Markup Language) trata-se de uma linguagem de marcacao utilizada para preparar a estrutura do site, utilizando o que chamamos de tags (, , ) para determinar o que aparecera naquela pagina, mas de forma que nao esteja sempre 'esteticamente bonito'; e como se fosse o esqueleto ou a carcaca que precisamos que esteja na pagina."},
+    {id: "a3", imagem:"imagens/cameras/piratescove.png", titulocamera: "Pirate's Cove", titulo: "CSS - Basico", texto: "O CSS (Cascading Style Sheets) e a linguagem de folhas de estilo que descrevera a parte visual da pagina marcada pelo HTML, adicionando cores, fontes, espacamentos, layout e ate mesmo a forma como o site se adapta em dispositivos diferentes. Com ele, conseguimos adicionar roupas e acessorios para o que antes era apenas uma carcaca."},
+    {id: "a4", imagem:"imagens/cameras/easthall.png", titulocamera: "East Hall", titulo: "JavaScript - Basico", texto: "O JavaScript sera a linguagem de programacao de alto nivel que ira motorizar e trazer comportamento dinamico para nossas paginas web. Diante disso, ele podera manipular HTML e CSS em tempo real, responder a acoes do usuario e impor requisicoes e outros comandos sem precisar atualizar a pagina, garantindo o funcionamento quase que completo de um site ou app."}
 ]
 
 const caminhoVentilador = [
@@ -186,10 +236,6 @@ let IntervaloAleatorio = null;
 let volumeAmbiente = 0.8;
 let somAmbienteTocando = false;
 let somAmbienteAtual = null;
-let camera1 = true;
-let camera2 = false;
-let camera3 = false;
-let camera4 = false;
 
 function sortearSomPonderado() {
     let somaTotal = 0;
@@ -299,32 +345,55 @@ const moldura = document.getElementById("molduracamera");
 let ladoCamera = "esquerda";
 
 function moverCamera() {
-    // scrollWidth pega a largura total real do conteúdo da moldura
     const larguraTotal = moldura.scrollWidth;
     const larguraTela = window.innerWidth;
     const sobra = larguraTotal - larguraTela;
 
-    if (ladoCamera === "esquerda") {
-        moldura.style.left = -sobra + "px";
-        ladoCamera = "direita";
-    } else {
-        moldura.style.left = "0px";
-        ladoCamera = "esquerda";
+    if (sobra > 0) {
+        // 2. Alterna a direção com base no lado atual
+        if (ladoCamera === "esquerda") {
+            moldura.style.left = -sobra + "px";
+            ladoCamera = "direita";
+        } else {
+            moldura.style.left = "0px";
+            ladoCamera = "esquerda";
+        }
     }
     
     setTimeout(moverCamera, 5500);
 }
 
 moverCamera();
+
+let pisca = 'nada'
+function vermelhopisca() {
+    if (pisca === 'nada'){
+        grupoMonitor.vermelho.style.display = 'none'
+        grupoMenu.vermelhocred.style.display = 'none'
+        grupoMenu.vermelhoref.style.display = 'none'
+        pisca = 'pisca'
+    }
+    else {
+        grupoMonitor.vermelho.style.display = 'block'
+        grupoMenu.vermelhocred.style.display = 'block'
+        grupoMenu.vermelhoref.style.display = 'block'
+        pisca = 'nada'
+    }
+    setTimeout(vermelhopisca, 1000)
+}
+
+vermelhopisca()
+
 dadosCameras.forEach(function(camera) {
     const botao = document.getElementById(camera.id);
     botao.addEventListener("click", function() {
         grupoMonitor.fundocamera.src = camera.imagem;
         grupoMonitor.texto.textContent = camera.texto;
         grupoMonitor.titulo.textContent = camera.titulo;
+        grupoMonitor.titulocamera.textContent = camera.titulocamera;
         grupoEstatica.estatica.style.transition='opacity 0s'
         grupoEstatica.pesada.style.transition='opacity 0s'
-        grupoEstatica.estatica.style.opacity='0.8'
+        grupoEstatica.estatica.style.opacity='0.6'
         grupoEstatica.pesada.style.opacity='1'
         grupoEstatica.estatica.offsetHeight;
         grupoEstatica.pesada.offsetHeight;

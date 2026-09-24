@@ -13,11 +13,37 @@
             <p id="versao">v 1.0.0</p>
             <p id="copyright">© 2026 Pedro B., Kaiky B.</p>
         </div>
-        <div class="butoesmenu">
+        <div class="butoesmenu" id="butoesmenu">
             <h1 id=textologo>Five<br>Nights<br>at<br>Freddy's</h1>
             <button id="newGame">New Game</button>
             <button id="credits">Credits</button>
             <button id="refferences">Refferences</button>
+        </div>
+        <div class="referencias" id="referencias">
+            <div class="caixareferencia">
+                <img src="imagens/menu/Referencias.png" id="refimg">
+                <img src="imagens/cameras/vermelho.png" id="vermelhorref" class="vermelhoreferente">
+                <p id="mensagem">W3C Standards: https://www.w3.org/standards/<br>MDN - Aprendendo Desenvolvimento Web: https://developer.mozilla.org/pt-BR/docs/Learn<br>MDN Web Docs - HTML:https://developer.mozilla.org/pt-BR/docs/Web/HTML<br>​W3Schools - HTML Tutorial: https://www.w3schools.com/html/<br>​MDN Web Docs - CSS: https://developer.mozilla.org/pt-BR/docs/Web/CSS<br>W3Schools - CSS Tutorial: https://www.w3schools.com/css/<br>​MDN Web Docs - JavaScript: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript<br>Javascript Info: https://pt.javascript.info/</p>
+                <button id="voltarref" class="voltar">Voltar</button>
+            </div>
+        </div>
+        <div class="creditos" id="creditos">
+            <div class="icone">
+                <img src="imagens/menu/pedroicone.png" alt="">
+                <p id="mensagemicone">Pedro Barbosa</p>
+                <p id="mensagemicone2">Seguranca Noturno Full Stack</p>
+            </div>
+            <div class="caixareferencia">
+                <img src="imagens/menu/Referencias.png" id="refimg">
+                <img src="imagens/cameras/vermelho.png" id="vermelhocred" class="vermelhoreferente">
+                <p id="mensagemcred">Esse site e parte do projeto Level UP da<br>Professora Priscilla Suene de Autoria Web<br> do IFRN - Zona Norte.</p>
+                <button id="voltarcred" class="voltar">Voltar</button>
+            </div>
+            <div class="icone2">
+                <img src="imagens/menu/kaikyicone.png" alt="">
+                <p id="mensagemicone">Kaiky Brito</p>
+                <p id="mensagemicone2">Seguranca Noturno Full Stack</p>
+            </div>
         </div>
         <div class="molduramenu">
             <img src="imagens/menu/431.png" id="fundomenu" class="fundomenu">
@@ -45,16 +71,30 @@
             </div>
         </div>
         <div id="monitor" class="monitor">
+            <div class="topotela">
+                <p id="hora">12 AM</p>
+                <p id="noite">Night LEVEL UP</p>
+            </div>
+            <img src="imagens/cameras/vermelho.png" alt="" id="vermelho" class="vermelhocamera">
+            <div class="energia">
+                <p id="energiat">Power Left: INF%<br>Usage: N/A</p>
+            </div>
             <div class="molduracamera" id="molduracamera">
                 <img src="imagens/cameras/showstage.png" alt="" id="showstage" class="fundocamera">
             </div>
             <div class="grupotexto">
                 <div class="textoflex">
                     <p id="titulo">Autoria Web - Introducao</p>
-                    <p class="texto" id="texto">​A autoria web e uma subarea da computacao a qual consiste na criacao, desenvolvimento, estruturacao e publicacao de conteudos e aplicacoes para a World Wide Web (WWW), podendo acessar sites e apps apos evoluir. Ela envolve o uso de linguagens de marcacao, estilizacao e programacao para interatividade, alem de principios de design e outros para definir uma acessibilidade satisfatoria, garantindo que uma pagina funcione em diferentes navegadores, de forma eficiente, segura e pratica.</p>
+                    <p class="texto" id="texto">​A autoria web e uma subarea da computacao a qual consiste na criacao,
+                        desenvolvimento, estruturacao e publicacao de conteudos e aplicacoes para a World Wide Web
+                        (WWW), podendo acessar sites e apps apos evoluir. Ela envolve o uso de linguagens de marcacao,
+                        estilizacao e programacao para interatividade, alem de principios de design e outros para
+                        definir uma acessibilidade satisfatoria, garantindo que uma pagina funcione em diferentes
+                        navegadores, de forma eficiente, segura e pratica.</p>
                 </div>
             </div>
             <div id="mapa" class="mapa">
+                <p id="titulocamera">Show Stage</p>
                 <img src="imagens/cameras/Mapa.png" alt="">
                 <div id="cameras">
                     <div class="botoescamera" id="ca1">
@@ -80,4 +120,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/fnaf.js"></script>
 </body>
+
 </html>
