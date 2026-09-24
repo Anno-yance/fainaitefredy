@@ -445,8 +445,8 @@ btnVoltarSala.addEventListener("click", function () {
     }, 4000);
     setTimeout(() => {
         transicao6am.classList.add('animando');
-    }, 2000);
+    }, 3000);
     setTimeout(() => {
         window.location.reload();
-    }, 12000);
+    }, 11000);
 });
