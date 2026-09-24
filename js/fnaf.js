@@ -127,6 +127,8 @@ const sonsMonitor = {
 
 const sonsSala = {
     ventilador: new Audio("sons/Buzz_Fan_Florescent2.wav"),
+    fimNoite: new Audio("sons/fimnoite.wav"),
+    fimRelogio: new Audio("sons/chimes2.wav")
 }
 
 sonsSala.ventilador.loop = true;
@@ -420,3 +422,31 @@ grupoMonitor.monitorbut.addEventListener("mouseenter", function() {
 });
 
 atualizarInterface(false);
+
+const btnVoltarSala = document.getElementById("btnVoltarSala");
+const transicao6am = document.getElementById("transicao6am");
+
+btnVoltarSala.addEventListener("click", function () {
+    sonsMonitor.blip.play();
+    sonsSala.fimRelogio.currentTime = 0;
+    sonsSala.fimRelogio.play().catch(erro => console.log("Autoplay infernal", erro));
+    sonsSala.ventilador.pause();
+    if (somAmbienteAtual) {
+        somAmbienteAtual.pause();
+    }
+    jogoAtivo = false;
+    transicao6am.style.display = 'flex';
+    setTimeout(() => {
+        transicao6am.style.opacity = '1';
+    }, 50);
+    setTimeout(() => {
+        sonsSala.fimNoite.currentTime = 0;
+        sonsSala.fimNoite.play().catch(erro => console.log("Erro ao tocar fimnoite:", erro));
+    }, 4000);
+    setTimeout(() => {
+        transicao6am.classList.add('animando');
+    }, 2000);
+    setTimeout(() => {
+        window.location.reload();
+    }, 12000);
+});

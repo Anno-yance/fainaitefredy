@@ -498,3 +498,86 @@ html, body {
     height: 90%;
     z-index: 10;
 }
+
+.btn-voltar-sala {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    font-family: 'Consola', monospace, sans-serif;
+    font-size: 2rem;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: font-style 0.2s ease;
+}
+
+.btn-voltar-sala:hover {
+    font-style: italic;
+}
+
+.transicao-6am {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    font-family: '8bit', monospace, sans-serif;
+}
+
+.contador-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.numero-wrapper {
+    position: relative;
+    height: 5rem;
+    width: 3.5rem; 
+    overflow: hidden;
+    display: inline-block;
+}
+
+.numero-wrapper .numero {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 5rem;
+    line-height: 1;
+    color: white;
+    transition: transform 8s ease-in-out;
+}
+#numero5 {
+    transform: translateY(0%);
+}
+#numero6 {
+    transform: translateY(100%);
+}
+.contador-container .am-texto {
+    font-size: 5rem;
+    line-height: 1;
+    color: white;
+    margin-left: 0.5rem;
+}
+.transicao-6am.animando #numero5 {
+    transform: translateY(-100%);
+}
+.transicao-6am.animando #numero6 {
+    transform: translateY(0%);
+}
+.shift-complete {
+    font-size: 3.5rem;
+    color: white;
+    margin-top: 0px;
+    letter-spacing: 2px;
+}
