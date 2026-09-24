@@ -357,7 +357,7 @@ html, body {
     cursor: pointer;
 }
 
-#voltar:hover{
+.voltar:hover{
         text-decoration: underline;
         text-underline-offset: -15px;
         text-decoration-thickness:5px ;
@@ -469,6 +469,19 @@ html, body {
     width: 70%;
     height: 90%;
     z-index: 10;
+}
+
+#mensagem a {
+    color: white;
+    cursor: pointer;
+    user-select: auto;
+    text-decoration: none;
+}
+
+#mensagem a:hover{
+    text-decoration: underline;
+    text-underline-offset: -8px;
+    text-decoration-thickness: 2px ;
 }
 
 #mensagemicone2{
